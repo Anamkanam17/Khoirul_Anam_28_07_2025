@@ -1,93 +1,64 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Login</title>
-        <style>
-            body {
-                font-family: Arial, Sans-Serif;
-                background-color: green;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            
-            .login-container {
-                background-color: white;
-                padding: 30px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 300px;
-                text-align: center;
-            }
-            
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-            }
-            
-            input {
-                width: 100%;
-                padding: 10px;
-                margin: 10px 0;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                box-sizing: border-box;
-            }
-            
-            button {
-                width: 100%;
-                padding: 10px;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            
-            button:hover {
-                background-color: #45a049;
-            }
-            
-            .error {
-                color: red;
-                font-size: 12px;
-            }
-        </style>
-        
-    </head>
-    <body>
-        <div class="login-container">
-            <h1>Login</h1>
-            <form id="loginForm">
-            <input type="text" id="username" placeholder="Masukkan username"  />
-            <input type="password" id="password"placeholder="Masukkan password"  />
-            <button type="submit">Login</button>
-            <p>Belum punya Akun? <a class="" href="#">Daftar akun</a></p>
-            <div id="error-message" class="error"></div>
-            </form>
-    </div>
-    
-    <script>
-        document.getElementById("loginForm").addEventListener('submit', function(event) {
-        event.preventDefault(); // Mencegah form untuk submi
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        var errorMessage = document.getElementById('error-message');
-        
-        //validasi
-        if(username === ''|| password === '') {
-            errorMessage.textContent = 'gaboleh kosong woy!!';
-        } else if (username !== 'anam' || password !== 'anam123') {
-            errorMessage.textContent = 'username atau password salah bro';
-        } else {
-            errorMessage.textContent = ''
-            alert('sukses login!!');
-        }
-            
-        });
-    </script>
+  <head>
+    <tittle>Register</tittle>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="registerform">
+              <input type="text" id="nama" placeholder="Masukan Nama"
+              required=""/>
+              <input type="email" id="email" placeholder="Masukan Email"
+              required/>
+              <input type="password" id="password" placeholder="Masukan password"
+              required/>
+              <input type="date" id="tanggal" placeholder="Tanggal Lahir"
+              required/>
+             
+              <label>Jenis Kelamin:</label>
+              <div class="radio-group">
+                <input type="radio" name="gender" id="Laki-laki"
+                value="Laki-laki" required/>
+                <label for="Laki-laki">Laki-laki</label>
+                <input type="radio" name="gender" id="Wanita"
+                value="Wanita"/>
+                <label for="Wanita">Wanita</label>
+                 <input type="radio" name="gender" id="Keduanya(bencong)"
+                value="Keduanya(bencong)"/>
+                <label for="Wanita">Keduanya(bencong)</label>
+              </div>
+             
+              <input type="text" id="tempat" placeholder="Tempat tanggal lahir"
+              required/>
+              <input type="number" id="no_telp" placeholder="Masukan no telp"
+              required/>
+              <textarea id="alamat" rows="9" cols="48" placeholder="Masukan alamat lengkap"
+              required></textarea>
+             
+              <input type="checkbox" id="setuju" />
+              <label for="setuju">Anda menyetujui Syarat dan ketentuan</label>
+              
+              <a href="Login.html">Login</a>
+              <button type="submit">buat akun</button>
+              
+        </form>
+      </div>
+      <table border="1">
+        <head>
+          <tr>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Tanggal lahir</th>
+            <th>Tempat tanggal lahir</th>
+            <th>Jenis Kelamin</th>
+            <th>No Telp</th>
+            <th>Alamat</th>
+          </tr>
+        </thead>
+          <tbody>
+           
+          </tbody>
+          <script src="script.js"></script>
+          <table>
     </body>
 </html>
